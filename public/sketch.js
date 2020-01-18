@@ -1,9 +1,4 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/ZjVyKXp9hec
-
-// Keep track of our socket connection
+// Keep track of socket connection
 var socket;
 
 // Teachable Machine
@@ -21,6 +16,7 @@ let modelURL = 'https://teachablemachine.withgoogle.com/models/a-7yFQA_/';
 var current = 0;
 let count = 0;
 var opstring="";
+
 // STEP 1: Load the model!
 function preload() {
   classifier = ml5.imageClassifier(modelURL + 'model.json');
@@ -57,6 +53,18 @@ function draw() {
 
   // Draw the video
   image(video, 0, 0);
+  
+
+//   socket.on("image", function(image, buffer) {
+//     if(image)
+//     {
+//         console.log(" image: from client side");
+//         // code to handle buffer like drawing with canvas** <--- is canvas drawing/library a requirement?  is there an alternative? another quick and dirty solution?
+//        console.log(image);
+//        // what can we do here to serve the image onto an img tag?
+//     }
+
+// });
   // socket.on('string',function (data)
   // {
   //   textSize(32);
@@ -129,23 +137,29 @@ function gotResults(error, results) {
     count = 0;
   }
   normal_init=normal;
-  if(count >= 20)
+  if(count >= 25)
   {
     // console.log(count,normal_init,label);
     if(normal_init!="none"){
     opstring+=normal_init;
     }
     socket.emit('string',opstring);
-    console.log(opstring);
+    var x = document.getElementById('me');
+    if(opstring)
+    {
+      x.innerHTML = opstring;
+    }
+    
     socket.on('string',function (data)
     {
       textSize(32);
       textAlign(CENTER, CENTER);
-      console.log('hiiii');
+      console.log(data);
       
       fill(255);
       var box = document.getElementById('tee');
       box.innerHTML = data;
+      
     });
     count=0;
   }
