@@ -30,7 +30,7 @@ function setup() {
   let canvas = createCanvas(640, 520);
   canvas.style.right = '100px';
   // Create the video
-  socket = io.connect('http://localhost:3000');
+  socket = io();
   
   video = createCapture(VIDEO);
   video.hide();
