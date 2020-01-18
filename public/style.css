@@ -19,7 +19,7 @@ html, body {
   
   #tee{
     position: absolute;
-    top:100;
+    top:200;
     font-size: 40px;
     left: 900px;
     word-wrap: break-word;
@@ -29,7 +29,7 @@ html, body {
   #tee2
   {
     position: absolute;
-    top:200;
+    top:100;
     font-size: 40px;
     left: 900px;
     word-wrap: break-word;
