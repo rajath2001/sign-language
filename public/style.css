@@ -1,0 +1,17 @@
+
+html, body {
+    margin: 100px;
+    padding: 0;
+  }
+  canvas {
+    display: block;
+    position: absolute;
+    left : 100px;
+
+  }
+  #tee{
+    position: absolute;
+    top:720;
+    font-size: 100px;
+  }
+  
