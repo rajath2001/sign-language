@@ -1,7 +1,8 @@
 
 html, body {
-    margin: 100px;
+    
     padding: 0;
+    background-color:black;
   }
   canvas {
     display: block;
@@ -9,9 +10,49 @@ html, body {
     left : 100px;
 
   }
+  h1{
+    font-size:50px;
+    color:lightskyblue;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  
   #tee{
     position: absolute;
-    top:720;
-    font-size: 100px;
+    top:100;
+    font-size: 40px;
+    left: 900px;
+    word-wrap: break-word;
+    color:red;
   }
+
+  #tee2
+  {
+    position: absolute;
+    top:100;
+    font-size: 40px;
+    left: 900px;
+    word-wrap: break-word;
+    color:greenyellow;
+  }
+  #me
+  {
+    position: absolute;
+    top:850;
+    font-size: 40px;
+    
+    word-wrap: break-word;
+    color: gold;
+  }
+
+  #me2
+  {
+    position: absolute;
+    top:750;
+    font-size: 40px;
+    
+    word-wrap: break-word;
+    color: greenyellow;
+  }
+  
   
