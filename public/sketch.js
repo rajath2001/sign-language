@@ -129,7 +129,7 @@ function gotResults(error, results) {
     count = 0;
   }
   normal_init=normal;
-  if(count >= 40)
+  if(count >= 20)
   {
     // console.log(count,normal_init,label);
     if(normal_init!="none"){
