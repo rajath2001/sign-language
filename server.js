@@ -25,6 +25,10 @@ app.use(express.static('public'));
 // WebSockets work with the HTTP server
 var io = require('socket.io')(server);
 
+app.get('/', function(req, res){
+  res.sendFile('/home/rajath/Downloads/Node/public/' + '/index.html');
+});
+
 // Register a callback function to run when we have an individual connection
 // This is run for each individual user that connects
 io.sockets.on('connection',
@@ -32,6 +36,12 @@ io.sockets.on('connection',
   function (socket) {
   
     console.log("We have a new cllient: " + socket.id);
+
+    // fs.readFile('/home/rajath/Downloads/Node/public' + 'myCanvas.jpg', function(err, buf){
+    //   // it's possible to embed binary data
+    //   // within arbitrarily-complex objects
+    //   socket.emit('image', { image: true, buffer: buf.toString('base64') })
+    //   console.log('image file is initialized');
   
     // When this user emits, client side: socket.emit('otherevent',some data);
     socket.on('string',
